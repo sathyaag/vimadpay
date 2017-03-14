@@ -1,0 +1,31 @@
+FORMAT: 1A
+HOST: http://vimadpay.apiblueprint.org/
+
+# vimadpay
+
+ViMADPay is a simple API allowing consumers to pay credit card bills on time.
+
+## Payments [/paycorporate]
+
+### Make a Credit Card Payment [POST]
+
+It takes a JSON object containing credit card payment information for payment
+processing and responds with a tracking number and payment status.
+
++ Request (application/json)
+
+        {
+            "cardholdername": "name",
+            "company": "company",
+            "creditcardno" : "1234-1234-1234-1234",
+            "provider" : "Visa",
+            "amount" : "$12345",
+            "paymentdate" : "15-Mar-2017"
+        }
+
++ Response 201 (application/json)
+           
+        {
+            "tracking": "0123456789",
+            "paymentstatus": "success"
+        }
