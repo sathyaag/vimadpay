@@ -32,13 +32,19 @@ processing and responds with a tracking number and payment status.
 
 ## Fetch Payment Account Details [/getAccount]
 
-### Get Payment Account Info [GET]
+### Get Payment Account Info [POST]
 
 It takes a JSON object containing credit card payment information for payment
 processing and responds with a tracking number and payment status.
 
++ Request (application/json)
 
-+ Response 200 (application/json)
+        {
+            "cardholdername": "name",
+            "company": "company"
+        }
+        
++ Response 201 (application/json)
         
         {
             "account" :
